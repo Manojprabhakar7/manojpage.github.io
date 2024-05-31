@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>User Login/Registration</header>
+    <div class="sidebar">
+        <button onclick="showLogin()">Login</button>
+        <button onclick="showRegistration()">Register</button>
+    </div>
+    <div id="formContainer">
+        <div id="registrationForm" style="display: none;">
+            <form onsubmit="return validateRegistration();">
+                <h2>Create Account</h2>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" required>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" pattern="[0-9]{10}" required>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I Agree to the <a href="#" onclick="showTerms(); return false;">User Agreement</a></label>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="loginForm" style="display: none;">
+            <form onsubmit="return validateLogin();">
+                <h2>Access Your Account</h2>
+                <label for="loginEmail">Email or Username:</label>
+                <input type="text" id="loginEmail" required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+    <div id="termsModal" style="display:none;">
+        <p>By using our services, you're agreeing to our updated User Agreement and Privacy Policy. Please read these documents carefully.</p>
+        <button onclick="hideTerms();">Close</button>
+    </div>
+</body>
+</html>
